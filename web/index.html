@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Órdenes de compra · Periferia</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Inicio"><span class="brand-icon">p.</span><span>periferia<span class="brand-small">IT GROUP · COMPRAS</span></span></a>
+    <div class="workspace-label">ESPACIO DE TRABAJO</div>
+    <div class="nav-current">◈ &nbsp; Asistente de compras <span class="small-tag">SAP</span></div>
+    <div class="sidebar-note">● Entorno simulado</div>
+    <div class="sidebar-section"><h2>Solicitudes de prueba</h2><p>Selecciona un caso para procesarlo.</p></div>
+    <div class="cases" id="cases"></div>
+    <div class="sidebar-bottom"><p>Control en cada paso.</p><span>Validación · Evidencia · Trazabilidad</span><button id="new-session" class="secondary">＋ Nueva conversación</button></div>
+  </aside>
+  <main>
+    <header><div><span class="eyebrow">ADMINISTRACIÓN / ÓRDENES DE COMPRA</span><h1>Tu asistente de compras</h1></div><div id="connection" class="connection">Conectando…</div></header>
+    <section class="chat" aria-label="Conversación">
+      <div id="welcome" class="welcome"><div class="welcome-icon">◈</div><span class="eyebrow">DE LA SOLICITUD A LA ORDEN</span><h2>Menos digitación.<br>Más control.</h2><p>Consulta una solicitud. Revisaremos sus documentos y validaciones antes de preparar la orden de compra.</p><div class="quick-actions"><button data-case="sol-001">Procesar sol-001 <span>↗</span></button><button data-case="sol-002">Revisar sol-002 <span>↗</span></button><button data-case="sol-004">Revisar sol-004 <span>↗</span></button></div><div class="workflow"><span>01 · Leer</span><span>02 · Validar</span><span>03 · Preparar</span><span>04 · Crear</span></div></div>
+      <div id="messages" class="messages" role="log" aria-live="polite"></div>
+      <div id="processing" class="processing" hidden><span class="spinner"></span> Revisando la solicitud…</div>
+    </section>
+    <div class="composer-area"><div id="confirmation" class="confirmation" hidden><strong>Esta orden necesita tu confirmación</strong><p>Revisa el payload y las excepciones antes de continuar.</p><div><button id="confirm">Confirmo</button><button id="reject" class="secondary">Rechazo</button></div></div><div id="error" class="error" role="alert" hidden></div><form id="composer"><label class="sr-only" for="message">Mensaje para el asistente</label><textarea id="message" rows="1" maxlength="4000" placeholder="Escribe, por ejemplo: Procesa la solicitud sol-001" required></textarea><button id="send" aria-label="Enviar mensaje">Enviar ↑</button></form><p class="composer-hint">Las excepciones requieren tu autorización. Las órdenes se registran en SAP simulado.</p></div>
+  </main>
+</body>
+</html>
